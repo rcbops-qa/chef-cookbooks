@@ -1,0 +1,31 @@
+{
+    "network_interfaces": {
+        "debian": [
+            {
+                "netmask": "255.255.255.0", 
+                "dnssearch": "rcb.rackspace.com", 
+                "address": "198.101.133.253", 
+                "device": "eth0", 
+                "auto": "true", 
+                "type": "static", 
+                "gateway": "198.101.133.1", 
+                "dnsnameservers": "8.8.8.8 8.8.4.4"
+            }
+        ], 
+        "redhat": [
+            {
+                "netmask": "255.255.255.0", 
+                "bootproto": "none", 
+                "userctl": "no", 
+                "device": "em1", 
+                "dns2": "8.8.4.4", 
+                "dns1": "8.8.8.8", 
+                "ipaddr": "198.101.133.253", 
+                "onboot": "yes", 
+                "peerdns": "yes", 
+                "gateway": "198.101.133.1"
+            }
+        ]
+    }, 
+    "id": "D4AE527F0B55_D4AE527F0B57_D4AE527F0B59_D4AE527F0B5B"
+}

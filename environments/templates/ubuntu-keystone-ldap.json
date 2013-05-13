@@ -1,0 +1,116 @@
+{
+  "name": "ubuntu-keystone-ldap",
+  "description": "",
+  "cookbook_versions": {
+  },
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "package_component": "folsom",
+    "keystone": {
+      "auth_type": "ldap",
+      "ldap": {
+        "url": "ldap://<LDAP_IP>",
+        "tree_dn": "dc=dev,dc=rcbops,dc=me",
+        "user": "cn=admin,dc=dev,dc=rcbops,dc=me",
+        "suffix": "dc=dev,dc=rcbops,dc=me",
+        "password": "<LDAP_ADMIN_PASS>",
+        "use_dumb_member": "false",
+
+        "user_tree_dn": "ou=Users,dc=dev,dc=rcbops,dc=me",
+        "user_objectclass": "inetOrgPerson",
+        "user_id_attribute": "cn",
+        "user_name_attribute": "sn",
+
+        "role_tree_dn": "ou=Roles,dc=dev,dc=rcbops,dc=me",
+        "role_objectclass": "organizationalRole",
+        "role_id_attribute": "cn",
+        "role_member_attribute": "roleOccupant",
+
+        "tenant_tree_dn": "ou=Groups,dc=dev,dc=rcbops,dc=me",
+        "tenant_objectclass": "groupOfNames",
+        "tenant_id_attribute": "cn",
+        "tenant_member_attribute": "member",
+        "tenant_name_attribute": "ou"
+      },
+      "admin_user": "admin",
+      "users": {
+        "demo": {
+          "roles": {
+            "Member": [
+              "demo"
+            ]
+          },
+          "default_tenant": "demo",
+          "password": "ostackdemo"
+        },
+        "admin": {
+          "roles": {
+            "admin": [
+              "admin",
+              "demo"
+            ]
+          },
+          "password": "ostackdemo"
+        }
+      },
+      "tenants": [
+        "admin",
+        "service",
+        "demo"
+      ]
+    },
+    "monitoring": {
+      "metric_provider": "collectd",
+      "procmon_provider": "monit"
+    },
+    "mysql": {
+      "root_network_acl": "%",
+      "allow_remote_root": true
+    },
+    "nova": {
+      "apply_patches": true,
+      "networks": [
+        {
+          "num_networks": "1",
+          "bridge": "br0",
+          "label": "public",
+          "dns1": "8.8.8.8",
+          "dns2": "8.8.4.4",
+          "bridge_dev": "eth1",
+          "network_size": "254",
+          "ipv4_cidr": "172.31.0.0/24"
+        }
+      ]
+    },
+    "osops": {
+      "apply_patches": true
+    },
+    "horizon": {
+      "theme": "Rackspace"
+    },
+    "developer_mode": false,
+    "osops_networks": {
+      "management": "198.101.133.0/24",
+      "nova": "198.101.133.0/24",
+      "public": "198.101.133.0/24"
+    },
+    "glance": {
+      "api": {
+        "default_store": "swift"
+      },
+      "image_upload": true,
+      "images": [
+        "cirros",
+        "precise"
+      ],
+      "api": {
+        "default_store": "swift"
+      }
+    }
+  }
+}
+
+
