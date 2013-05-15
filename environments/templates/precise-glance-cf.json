@@ -8,7 +8,7 @@
   "default_attributes": {
   },
   "override_attributes": {
-    "package_component": "folsom",
+    "package_component": "<PACKAGE_COMPONENT>",
     "keystone": {
       "admin_user": "admin",
       "users": {
