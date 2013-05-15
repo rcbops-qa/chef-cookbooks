@@ -1,5 +1,5 @@
 {
-  "name": "centos-glance-cf",
+  "name": "centos-default",
   "description": "",
   "cookbook_versions": {
   },
@@ -73,18 +73,26 @@
       "public": "198.101.133.0/24"
     },
     "glance": {
-      "api": {
-        "default_store": "swift",
-        "swift_store_user": "<TENANT_ID>:<TENANT_NAME>",
-        "swift_store_key": "<TENANT_PASSWORD>",
-        "swift_store_auth_version": "2",
-        "swift_store_auth_address": "https://identity.api.rackspacecloud.com/v2.0"
-      },
       "image_upload": true,
       "images": [
         "cirros",
         "precise"
       ]
+    },
+    "vips": {
+      "mysql-db": "198.101.133.157",
+      "rabbitmq-queue": "198.101.133.158",
+      "glance-registry": "198.101.133.159",
+      "keystone-service-api": "198.101.133.159",
+      "nova-novnc-proxy": "198.101.133.159",
+      "nova-xvpvnc-proxy": "198.101.133.159",
+      "nova-api": "198.101.133.159",
+      "keystone-admin-api": "198.101.133.159",
+      "glance-api": "198.101.133.159",
+      "nova-ec2-public": "198.101.133.159",
+      "cinder-api": "198.101.133.159",
+      "horizon-dash": "198.101.133.159",
+      "horizon-dash_ssl": "198.101.133.159"
     }
   }
 }
