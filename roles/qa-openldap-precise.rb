@@ -1,4 +1,4 @@
-name "qa-openldap-ubuntu"
+name "qa-openldap-precise"
 description "This will create an openldap server for RPCS QA Team"
 run_list(
   "recipe[network-interfaces]",
