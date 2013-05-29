@@ -5,10 +5,9 @@ run_list(
   "recipe[openldap::server]"
 )
 default_attributes(  { "openldap" => {
-                            "rootpw" => "{SSHA}Fu58XhERv/UK+xYN5yOmYSK9oXjMHQZK", 
+                            "rootpw" => "{SSHA}WAIUIwjUCgtv3UmoR2Sou3c+u3NAj85g", 
                             "basedn" => "dc=dev,dc=rcbops,dc=me",
-                            "server" => "ldap.rcbops",
-                            "auth_bindpw" => "{SSHA}Fu58XhERv/UK+xYN5yOmYSK9oXjMHQZK",
+                            "auth_bindpw" => "{SSHA}WAIUIwjUCgtv3UmoR2Sou3c+u3NAj85g",
                             "slapd_type" => "master"
                             }   
                       }
