@@ -6,7 +6,7 @@ run_list(
 )
 default_attributes(  { "openldap" => {
                             "rootpw" => "{SSHA}865wo+Nq14BWXpNuFvYWVXROgkz0QXWO", 
-                            "basedn" => "dc=dev,dc=rcbops,dc=me",
+                            "basedn" => "dc=rcb,dc=me",
                             "server" => "ldap.rcbops",
                             "auth_bindpw" => "{SSHA}865wo+Nq14BWXpNuFvYWVXROgkz0QXWO",
                             "slapd_type" => "master"
