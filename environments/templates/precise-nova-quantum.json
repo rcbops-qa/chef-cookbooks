@@ -47,7 +47,7 @@
     },
     "nova": {
       "apply_patches": true,
-      "networks": {
+      "network": {
         "provider": "quantum"
       }
     },
