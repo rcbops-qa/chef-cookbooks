@@ -8,59 +8,30 @@
   "default_attributes": {
   },
   "override_attributes": {
-    "package_component": "<PACKAGE_COMPONENT>",
+    "package_component": "<PACKAGE_COMPONENT>",    
     "keystone": {
+      "debug": "True",
       "auth_type": "ldap",
       "ldap": {
-        "url": "ldap://<LDAP_IP>",
-        "tree_dn": "dc=rcb,dc=me",
-        "user": "cn=admin,dc=rcb,dc=me",
-        "suffix": "dc=rcb,dc=me",
-        "password": "<LDAP_ADMIN_PASS>",
-        "use_dumb_member": "false",
-
+        "user_enabled_emulation": "True",
         "user_tree_dn": "ou=Users,dc=rcb,dc=me",
-        "user_objectclass": "inetOrgPerson",
-        "user_id_attribute": "cn",
-        "user_name_attribute": "sn",
-
-        "role_tree_dn": "ou=Roles,dc=rcb,dc=me",
+        "user_attribute_ignore": "tenantId",
+        "tenant_enabled_emulation": "True",
+        "url": "ldap://<LDAP_IP>",
+        "user": "cn=admin,dc=rcb,dc=me",
         "role_objectclass": "organizationalRole",
-        "role_id_attribute": "cn",
-        "role_member_attribute": "roleOccupant",
-
-        "tenant_tree_dn": "ou=Groups,dc=rcb,dc=me",
         "tenant_objectclass": "groupOfNames",
-        "tenant_id_attribute": "cn",
-        "tenant_member_attribute": "member",
-        "tenant_name_attribute": "ou"
-      },
-      "admin_user": "admin",
-      "users": {
-        "demo": {
-          "roles": {
-            "Member": [
-              "demo"
-            ]
-          },
-          "default_tenant": "demo",
-          "password": "ostackdemo"
-        },
-        "admin": {
-          "roles": {
-            "admin": [
-              "admin",
-              "demo"
-            ]
-          },
-          "password": "ostackdemo"
-        }
-      },
-      "tenants": [
-        "admin",
-        "service",
-        "demo"
-      ]
+        "group_attribute_ignore": "enabled",
+        "tenant_attribute_ignore": "tenantId",
+        "tenant_tree_dn": "ou=Groups,dc=rcb,dc=me",
+        "allow_subtree_delete": "false",
+        "password": "<LDAP_ADMIN_PASS>",
+        "suffix": "dc=rcb,dc=me",
+        "user_objectclass": "inetOrgPerson",
+        "domain_attribute_ignore": "enabled",
+        "use_dumb_member": "True",
+        "role_tree_dn": "ou=Roles,dc=rcb,dc=me"
+      }
     },
     "monitoring": {
       "metric_provider": "collectd",
