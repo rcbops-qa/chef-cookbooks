@@ -31,7 +31,33 @@
         "domain_attribute_ignore": "enabled",
         "use_dumb_member": "True",
         "role_tree_dn": "ou=Roles,dc=rcb,dc=me"
-      }
+      },
+      "admin_user": "admin",
+      "users": {
+        "demo": {
+          "roles": {
+            "Member": [
+              "demo"
+            ]
+          },
+          "default_tenant": "demo",
+          "password": "ostackdemo"
+        },
+        "admin": {
+          "roles": {
+            "admin": [
+              "admin",
+              "demo"
+            ]
+          },
+          "password": "ostackdemo"
+        }
+      },
+      "tenants": [
+        "admin",
+        "service",
+        "demo"
+      ]
     },
     "monitoring": {
       "metric_provider": "collectd",
