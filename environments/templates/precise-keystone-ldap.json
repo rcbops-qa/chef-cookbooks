@@ -41,7 +41,7 @@
             ]
           },
           "default_tenant": "demo",
-          "password": "demo"
+          "password": "demo2"
         },
         "admin": {
           "roles": {
