@@ -22,7 +22,7 @@
         "role_objectclass": "organizationalRole",
         "tenant_objectclass": "groupOfNames",
         "group_attribute_ignore": "enabled",
-        "tenant_attribute_ignore": "tenantId,",
+        "tenant_attribute_ignore": "tenantId,email",
         "tenant_tree_dn": "ou=Groups,dc=rcb,dc=me",
         "allow_subtree_delete": "false",
         "password": "<LDAP_ADMIN_PASS>",
