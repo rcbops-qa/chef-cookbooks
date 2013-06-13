@@ -84,6 +84,7 @@
       "rabbitmq-queue": "198.101.133.155",
       "glance-registry": "198.101.133.156",
       "keystone-service-api": "198.101.133.156",
+      "keystone-internal-api": "198.101.133.156",
       "nova-novnc-proxy": "198.101.133.156",
       "nova-xvpvnc-proxy": "198.101.133.156",
       "nova-api": "198.101.133.156",
