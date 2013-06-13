@@ -43,6 +43,15 @@
           "default_tenant": "demo",
           "password": "ostackdemo"
         },
+        "alt_demo": {
+          "roles": {
+            "Member": [
+              "demo"
+            ]
+          },
+          "default_tenant": "alt_demo",
+          "password": "ostackdemo"
+        },
         "admin": {
           "roles": {
             "admin": [
