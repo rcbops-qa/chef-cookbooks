@@ -13,6 +13,7 @@
       "debug": "True",
       "auth_type": "ldap",
       "ldap": {
+        "user_mail_attribute": "mail",
         "user_enabled_emulation": "True",
         "user_tree_dn": "ou=Users,dc=rcb,dc=me",
         "user_attribute_ignore": "tenantId,email",
