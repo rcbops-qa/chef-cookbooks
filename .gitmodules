@@ -1,9 +1,10 @@
 [submodule "cookbooks/nscd"]
 	path = cookbooks/nscd
-	url = https@github.com:opscode-cookbooks/nscd.git
+	url = https://github.com/opscode-cookbooks/nscd.git 
 [submodule "cookbooks/389"]
 	path = cookbooks/389
-	url = https@github.com:john5223/389.git
+	url = https://github.com/john5223/389.git
 [submodule "cookbooks/openldap"]
 	path = cookbooks/openldap
-	url = https@github.com:john5223/openldap.git
+	url = https://github.com/john5223/openldap.git
+ 
