@@ -94,7 +94,7 @@
       "nova-novnc-proxy": "198.101.133.156",
       "nova-xvpvnc-proxy": "198.101.133.156",
       "rabbitmq-queue": "198.101.133.155",
-      "swift-proxy": "192.168.133.156",	
+      "swift-proxy": "192.168.133.156"
     }
   }
 }

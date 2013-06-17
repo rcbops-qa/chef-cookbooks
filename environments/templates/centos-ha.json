@@ -84,7 +84,7 @@
       "glance-api": "198.101.133.159",
       "glance-registry": "198.101.133.159",
       "horizon-dash": "198.101.133.159",
-      "horizon-dash_ssl": "198.101.133.159"
+      "horizon-dash_ssl": "198.101.133.159",
       "keystone-admin-api": "198.101.133.159",
       "keystone-internal-api": "198.101.133.159",
       "keystone-service-api": "198.101.133.159",
@@ -94,7 +94,7 @@
       "nova-novnc-proxy": "198.101.133.159",
       "nova-xvpvnc-proxy": "198.101.133.159",
       "rabbitmq-queue": "198.101.133.158",
-      "swift-proxy": "192.168.133.159",	
+      "swift-proxy": "192.168.133.159"
     }
   }
 }
