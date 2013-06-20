@@ -9,4 +9,4 @@
 	url = https://github.com/john5223/openldap.git
 [submodule "cookbooks/emacs"]
 	path = cookbooks/emacs
-	url = git@github.com:opscode-cookbooks/emacs.git
+	url = https://github.com/opscode-cookbooks/emacs.git
