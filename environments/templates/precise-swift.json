@@ -1,0 +1,27 @@
+{
+ "name": "<NAME>",
+ "description": "",
+ "cookbook_versions": {
+ },
+ "json_class": "Chef::Environment",
+ "chef_type": "environment",
+ "default_attributes": {
+ },
+ "override_attributes": {
+   "swift-private-cloud": {
+     "network": {
+       "management": "<MANAGEMENT_NETWORK>",
+       "exnet": "<EXTERNAL_NETWORK>"
+     },
+     "swift_common": {
+       "swift_hash_prefix": "<SWIFT_HASH_PREFIX>",
+       "swift_hash_suffix": "<SWIFT_HASH_SUFFIX>"
+     },
+     "keystone": {
+       "swift_admin_url": "<SWIFT_ADMIN_URL>",
+       "swift_public_url": "<SWIFT_PUBLIC_URL>",
+       "swift_internal_url": "<SWIFT_INTERNAL_URL>"
+     }
+   }
+ }
+}
