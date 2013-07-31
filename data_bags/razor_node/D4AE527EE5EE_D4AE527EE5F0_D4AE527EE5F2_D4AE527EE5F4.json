@@ -4,7 +4,7 @@
             {
                 "netmask": "255.255.255.0", 
                 "dnssearch": "rcb.rackspace.com", 
-                "address": "198.101.133.237", 
+                "address": "198.101.133.236", 
                 "device": "eth0", 
                 "auto": "true", 
                 "type": "static", 
@@ -20,7 +20,7 @@
                 "device": "em1", 
                 "dns2": "8.8.4.4", 
                 "dns1": "8.8.8.8", 
-                "ipaddr": "198.101.133.237", 
+                "ipaddr": "198.101.133.236", 
                 "onboot": "yes", 
                 "peerdns": "yes", 
                 "gateway": "198.101.133.1"
