@@ -4,7 +4,7 @@
             {
                 "netmask": "255.255.255.0", 
                 "dnssearch": "rcb.rackspace.com", 
-                "address": "198.101.133.227", 
+                "address": "198.101.133.217", 
                 "device": "eth0", 
                 "auto": "true", 
                 "type": "static", 
@@ -20,12 +20,12 @@
                 "device": "em1", 
                 "dns2": "8.8.4.4", 
                 "dns1": "8.8.8.8", 
-                "ipaddr": "198.101.133.227", 
+                "ipaddr": "198.101.133.217", 
                 "onboot": "yes", 
                 "peerdns": "yes", 
                 "gateway": "198.101.133.1"
             }
         ]
     }, 
-    "id": "D4AE527F1459_D4AE527F145B_D4AE527F145D_D4AE527F145F"
+    "id": "D4AE527EE2D8_D4AE527EE2DA_D4AE527EE2DC_D4AE527EE2DE"
 }
