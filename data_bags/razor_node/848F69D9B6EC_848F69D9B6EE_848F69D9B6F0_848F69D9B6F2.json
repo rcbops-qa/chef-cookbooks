@@ -1,17 +1,5 @@
 {
     "network_interfaces": {
-        "debian": [
-            {
-                "netmask": "255.255.255.0", 
-                "dnssearch": "rcb.rackspace.com", 
-                "address": "198.101.133.233", 
-                "device": "eth0", 
-                "auto": "true", 
-                "type": "static", 
-                "gateway": "198.101.133.1", 
-                "dnsnameservers": "8.8.8.8 8.8.4.4"
-            }
-        ], 
         "redhat": [
             {
                 "netmask": "255.255.255.0", 
@@ -25,7 +13,20 @@
                 "peerdns": "yes", 
                 "gateway": "198.101.133.1"
             }
-        ]
+        ], 
+        "debian": [
+            {
+                "netmask": "255.255.255.0", 
+                "dnssearch": "rcb.rackspace.com", 
+                "address": "198.101.133.233", 
+                "device": "eth0", 
+                "auto": "true", 
+                "type": "static", 
+                "gateway": "198.101.133.1", 
+                "dnsnameservers": "8.8.8.8 8.8.4.4"
+            }
+        ], 
+        "drac": "10.12.241.41"
     }, 
     "id": "848F69D9B6EC_848F69D9B6EE_848F69D9B6F0_848F69D9B6F2"
 }

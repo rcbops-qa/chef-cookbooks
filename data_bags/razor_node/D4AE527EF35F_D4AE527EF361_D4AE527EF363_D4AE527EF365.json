@@ -8,7 +8,7 @@
                 "device": "em1", 
                 "dns2": "8.8.4.4", 
                 "dns1": "8.8.8.8", 
-                "ipaddr": "198.101.133.215", 
+                "ipaddr": "198.101.133.210", 
                 "onboot": "yes", 
                 "peerdns": "yes", 
                 "gateway": "198.101.133.1"
@@ -18,7 +18,7 @@
             {
                 "netmask": "255.255.255.0", 
                 "dnssearch": "rcb.rackspace.com", 
-                "address": "198.101.133.215", 
+                "address": "198.101.133.210", 
                 "device": "eth0", 
                 "auto": "true", 
                 "type": "static", 
@@ -26,7 +26,7 @@
                 "dnsnameservers": "8.8.8.8 8.8.4.4"
             }
         ], 
-        "drac": "10.12.241.28"
+        "drac": "10.12.241.117"
     }, 
-    "id": "D4AE527F19F6_D4AE527F19F8_D4AE527F19FA_D4AE527F19FC"
+    "id": "D4AE527EF35F_D4AE527EF361_D4AE527EF363_D4AE527EF365"
 }
