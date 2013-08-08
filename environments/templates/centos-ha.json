@@ -94,7 +94,20 @@
       "nova-novnc-proxy": "198.101.133.159",
       "nova-xvpvnc-proxy": "198.101.133.159",
       "rabbitmq-queue": "198.101.133.158",
-      "swift-proxy": "192.168.133.159"
+      "swift-proxy": "192.168.133.159",
+      "config": {
+        "198.101.133.157": {
+            "vrid": 10,
+            "network": "public"
+        },
+        "198.101.133.158": {
+            "vrid": 11,
+            "network": "public"
+        },
+        "198.101.133.159": {
+            "vrid": 12,
+            "network": "public"
+        }
     }
   }
 }
