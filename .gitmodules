@@ -10,3 +10,9 @@
 [submodule "cookbooks/emacs"]
 	path = cookbooks/emacs
 	url = https://github.com/opscode-cookbooks/emacs.git
+[submodule "cookbooks/yum"]
+	path = cookbooks/yum
+	url = https://github.com/opscode-cookbooks/yum.git
+[submodule "cookbooks/rcbops-qa"]
+	path = cookbooks/rcbops-qa
+	url = https://github.com/cjoelrun/rcbops-qa.git
