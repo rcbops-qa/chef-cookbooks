@@ -60,6 +60,7 @@
             "ipv4_cidr": "172.31.0.0/24",
             "label": "public"
         }
+      }
     },
     "osops": {
       "apply_patches": true
