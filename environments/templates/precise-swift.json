@@ -9,13 +9,13 @@
  },
  "override_attributes": {
    "swift-private-cloud": {
-     "network": {
-       "management": "<MANAGEMENT_NETWORK>",
-       "exnet": "<EXTERNAL_NETWORK>"
-     },
-     "swift_common": {
-       "swift_hash_prefix": "<SWIFT_HASH_PREFIX>",
-       "swift_hash_suffix": "<SWIFT_HASH_SUFFIX>"
-     },
+        "network": {
+            "management": "<MANAGEMENT_NETWORK>",
+            "exnet": "<EXTERNAL_NETWORK>"
+        },
+        "swift_common": {
+            "swift_hash_prefix": "<SWIFT_HASH_PREFIX>",
+            "swift_hash_suffix": "<SWIFT_HASH_SUFFIX>"
+        }
     }
 }
