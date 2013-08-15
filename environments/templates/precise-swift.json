@@ -17,11 +17,5 @@
        "swift_hash_prefix": "<SWIFT_HASH_PREFIX>",
        "swift_hash_suffix": "<SWIFT_HASH_SUFFIX>"
      },
-     "keystone": {
-       "swift_admin_url": "",
-       "swift_public_url": "",
-       "swift_internal_url": ""
-     }
-   }
- }
+    }
 }
