@@ -16,6 +16,9 @@
         "swift_common": {
             "swift_hash_prefix": "<SWIFT_HASH_PREFIX>",
             "swift_hash_suffix": "<SWIFT_HASH_SUFFIX>"
+        },
+        "dispersion": {
+            "dis_key": "secrete"
         }
     }
 }
