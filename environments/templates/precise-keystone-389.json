@@ -71,6 +71,9 @@
     "osops": {
       "apply_patches": true
     },
+    "horizon": {
+      "theme": "Rackspace"
+    },
     "swift": {
       "authmode": "keystone",
       "swift_hash": "RANDOM_STRING"

@@ -65,6 +65,9 @@
     "osops": {
       "apply_patches": true
     },
+    "horizon": {
+      "theme": "Rackspace"
+    },
     "developer_mode": false,
     "osops_networks": {
       "management": "198.101.133.0/24",

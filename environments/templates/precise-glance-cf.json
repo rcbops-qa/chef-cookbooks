@@ -62,6 +62,9 @@
     "osops": {
       "apply_patches": true
     },
+    "horizon": {
+      "theme": "Rackspace"
+    },
     "developer_mode": true,
     "osops_networks": {
       "management": "198.101.133.0/24",
@@ -70,12 +73,12 @@
     },
     "glance": {
       "api": {
-                "default_store": "swift",
-                "swift_store_user": "<TENANT_ID>:<TENANT_NAME>",
-                "swift_store_key": "<TENANT_PASSWORD>",
-                "swift_store_auth_version": "2",
-                          "swift_store_auth_address": "https://identity.api.rackspacecloud.com/v2.0"
-            },
+    		"default_store": "swift",
+    		"swift_store_user": "<TENANT_ID>:<TENANT_NAME>",
+    		"swift_store_key": "<TENANT_PASSWORD>",
+    		"swift_store_auth_version": "2",
+			  "swift_store_auth_address": "https://identity.api.rackspacecloud.com/v2.0"
+	    },
       "image_upload": true,
       "images": [
         "cirros",
