@@ -8,7 +8,7 @@
   "default_attributes": {
   },
   "override_attributes": {
-    "package_component": "<PACKAGE_COMPONENT>",    
+    "package_component": "<PACKAGE_COMPONENT>",
     "keystone": {
       "debug": "True",
       "auth_type": "ldap",
@@ -93,9 +93,6 @@
     },
     "osops": {
       "apply_patches": true
-    },
-    "horizon": {
-      "theme": "Rackspace"
     },
     "developer_mode": false,
     "osops_networks": {
