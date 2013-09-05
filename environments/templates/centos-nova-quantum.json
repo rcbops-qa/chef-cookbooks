@@ -55,7 +55,7 @@
       "apply_patches": true
     },
     "horizon": {
-      "theme": "Rackspace"
+      "theme": "<THEME>"
     },
     "developer_mode": false,
     "osops_networks": {
