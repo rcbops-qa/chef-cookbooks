@@ -54,6 +54,11 @@
     "osops": {
       "apply_patches": true
     },
+    "quantum": {
+      "ovs": {
+        "network_type": "gre"
+      }
+    },
     "horizon": {
       "theme": "<THEME>"
     },

@@ -51,6 +51,11 @@
         "provider": "quantum"
       }
     },
+    "quantum": {
+      "ovs": {
+        "network_type": "gre"
+      }
+    },
     "osops": {
       "apply_patches": true
     },
