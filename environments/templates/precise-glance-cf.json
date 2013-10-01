@@ -1,89 +1,95 @@
 {
-  "name": "<NAME>",
-  "description": "",
-  "cookbook_versions": {
-  },
-  "json_class": "Chef::Environment",
-  "chef_type": "environment",
-  "default_attributes": {
-  },
-  "override_attributes": {
-    "package_component": "<PACKAGE_COMPONENT>",
-    "keystone": {
-      "admin_user": "admin",
-      "users": {
-        "demo": {
-          "roles": {
-            "Member": [
-              "demo"
+    "name": "<NAME>",
+    "description": "",
+    "cookbook_versions": {
+    },
+    "json_class": "Chef::Environment",
+    "chef_type": "environment",
+    "default_attributes": {
+    },
+    "override_attributes": {
+        "package_component": "<PACKAGE_COMPONENT>",
+        "keystone": {
+            "admin_user": "admin",
+            "users": {
+                "demo": {
+                    "roles": {
+                        "Member": [
+                            "demo"
+                        ]
+                    },
+                    "default_tenant": "demo",
+                    "password": "ostackdemo"
+                },
+                "admin": {
+                    "roles": {
+                        "admin": [
+                            "admin",
+                            "demo"
+                        ]
+                    },
+                    "password": "ostackdemo"
+                }
+            },
+            "tenants": [
+                "admin",
+                "service",
+                "demo"
             ]
-          },
-          "default_tenant": "demo",
-          "password": "ostackdemo"
         },
-        "admin": {
-          "roles": {
-            "admin": [
-              "admin",
-              "demo"
+        "monitoring": {
+            "metric_provider": "collectd",
+            "procmon_provider": "monit"
+        },
+        "mysql": {
+            "root_network_acl": "%",
+            "allow_remote_root": true
+        },
+        "nova": {
+            "apply_patches": true,
+            "networks": {
+                "public": {
+                    "bridge": "br0",
+                    "dns1": "8.8.8.8",
+                    "dns2": "8.8.4.4",
+                    "bridge_dev": "eth1",
+                    "network_size": "254",
+                    "ipv4_cidr": "172.31.0.0/24",
+                    "label": "public"
+                }
+            }
+        },
+        "osops": {
+            "apply_patches": true
+        },
+        "horizon": {
+            "theme": "<THEME>"
+        },
+        "developer_mode": true,
+        "osops_networks": {
+            "management": "198.101.133.0/24",
+            "nova": "198.101.133.0/24",
+            "public": "198.101.133.0/24"
+        },
+        "glance": {
+            "api": {
+                "default_store": "swift",
+                "swift_store_user": "<TENANT_ID>:<TENANT_NAME>",
+                "swift_store_key": "<TENANT_PASSWORD>",
+                "swift_store_auth_version": "2",
+                "swift_store_auth_address": "https://identity.api.rackspacecloud.com/v2.0"
+            },
+            "services": {
+                "api": {"path": ""},
+                "admin-api": {"path": ""},
+                "internal-api": {"path": ""},
+                "registry": {"path": ""}
+            },
+            "image_upload": true,
+            "images": [
+                "cirros",
+                "precise"
             ]
-          },
-          "password": "ostackdemo"
         }
-      },
-      "tenants": [
-        "admin",
-        "service",
-        "demo"
-      ]
-    },
-    "monitoring": {
-      "metric_provider": "collectd",
-      "procmon_provider": "monit"
-    },
-    "mysql": {
-      "root_network_acl": "%",
-      "allow_remote_root": true
-    },
-    "nova": {
-      "apply_patches": true,
-      "networks": {
-        "public": {
-            "bridge": "br0",
-            "dns1": "8.8.8.8",
-            "dns2": "8.8.4.4",
-            "bridge_dev": "eth1",
-            "network_size": "254",
-            "ipv4_cidr": "172.31.0.0/24",
-            "label": "public"
-        }
-      }
-    },
-    "osops": {
-      "apply_patches": true
-    },
-    "horizon": {
-      "theme": "<THEME>"
-    },
-    "developer_mode": true,
-    "osops_networks": {
-      "management": "198.101.133.0/24",
-      "nova": "198.101.133.0/24",
-      "public": "198.101.133.0/24"
-    },
-    "glance": {
-      "api": {
-    		"default_store": "swift",
-    		"swift_store_user": "<TENANT_ID>:<TENANT_NAME>",
-    		"swift_store_key": "<TENANT_PASSWORD>",
-    		"swift_store_auth_version": "2",
-			  "swift_store_auth_address": "https://identity.api.rackspacecloud.com/v2.0"
-	    },
-      "image_upload": true,
-      "images": [
-        "cirros",
-        "precise"
-      ]
     }
-  }
 }
