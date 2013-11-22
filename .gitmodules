@@ -16,3 +16,6 @@
 [submodule "cookbooks/rcbops-qa"]
 	path = cookbooks/rcbops-qa
 	url = https://github.com/cjoelrun/rcbops-qa.git
+[submodule "cookbooks/openssh"]
+	path = cookbooks/openssh
+	url = https://github.com/opscode-cookbooks/openssh.git
