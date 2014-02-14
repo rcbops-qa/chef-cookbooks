@@ -1,18 +1,27 @@
 [submodule "cookbooks/nscd"]
-	path = cookbooks/nscd
-	url = https://github.com/opscode-cookbooks/nscd.git 
+        path = cookbooks/nscd
+        url = https://github.com/opscode-cookbooks/nscd.git
 [submodule "cookbooks/389"]
-	path = cookbooks/389
-	url = https://github.com/john5223/389.git
+        path = cookbooks/389
+        url = https://github.com/john5223/389.git
 [submodule "cookbooks/openldap"]
-	path = cookbooks/openldap
-	url = https://github.com/john5223/openldap.git
+        path = cookbooks/openldap
+        url = https://github.com/john5223/openldap.git
 [submodule "cookbooks/emacs"]
-	path = cookbooks/emacs
-	url = https://github.com/opscode-cookbooks/emacs.git
+        path = cookbooks/emacs
+        url = https://github.com/opscode-cookbooks/emacs.git
 [submodule "cookbooks/yum"]
-	path = cookbooks/yum
-	url = https://github.com/opscode-cookbooks/yum.git
+        path = cookbooks/yum
+        url = https://github.com/opscode-cookbooks/yum.git
 [submodule "cookbooks/rcbops-qa"]
-	path = cookbooks/rcbops-qa
-	url = https://github.com/cjoelrun/rcbops-qa.git
+        path = cookbooks/rcbops-qa
+        url = https://github.com/rcbops-qa/rcbops-qa.git
+[submodule "cookbooks/openssh"]
+        path = cookbooks/openssh
+        url = https://github.com/opscode-cookbooks/openssh.git
+[submodule "cookbooks/openssl"]
+        path = cookbooks/openssl
+        url = https://github.com/opscode-cookbooks/openssl.git
+[submodule "cookbooks/iptables"]
+        path = cookbooks/iptables
+        url = https://github.com/opscode-cookbooks/iptables.git
