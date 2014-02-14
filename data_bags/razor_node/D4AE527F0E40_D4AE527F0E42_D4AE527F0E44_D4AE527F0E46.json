@@ -5,7 +5,7 @@
                 "netmask": "255.255.255.0", 
                 "bootproto": "none", 
                 "userctl": "no", 
-                "device": "em1", 
+                "device": "eth0", 
                 "dns2": "8.8.4.4", 
                 "dns1": "8.8.8.8", 
                 "ipaddr": "198.101.133.228", 
