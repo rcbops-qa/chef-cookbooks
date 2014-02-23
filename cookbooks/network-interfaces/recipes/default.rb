@@ -13,6 +13,17 @@ case node['platform']
 # DEBIAN DISTROS
   when 'ubuntu', 'debian'
 
+    apt_package "ifenslave-2.6" do
+        acton :install
+
+    ruby_block "add bonding to kernel modules" do
+        block do
+            File.open("/etc/modules", "w") do | file |
+                file.puts "bonding"
+            end
+        end
+    end
+
     # create the interfaces file for the node using the interfaces template
     template "/tmp/chef-net-iface" do
       source "interfaces.erb"
