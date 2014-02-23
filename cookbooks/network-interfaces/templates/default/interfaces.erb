@@ -57,7 +57,7 @@ iface <%= iface[:device] %> inet <%= iface[:type] %>
     pre-up <%= iface[:pre_up] %>
 <% end %>
 <% if iface[:up] -%>
-    up ip link set <%= iface[:up] %> up
+    up ip link set $IFACE up
 <% end %>
 <% if iface[:post_up] -%>
     post-up <%= iface[:post_up] %>
@@ -66,7 +66,7 @@ iface <%= iface[:device] %> inet <%= iface[:type] %>
     pre-down <%= iface[:pre_down] %>
 <% end %>
 <% if iface[:down] -%>
-    down ip link set <%= iface[:down] %> down
+    down ip link set $IFACE down
 <% end %>
 <% if iface[:post_down] -%>
     post-down <%= iface[:post_down] %>
