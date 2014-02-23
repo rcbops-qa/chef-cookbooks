@@ -5,7 +5,7 @@
                 "netmask": "255.255.255.0", 
                 "bootproto": "none", 
                 "userctl": "no", 
-                "device": "eth0", 
+                "device": "em1", 
                 "dns2": "8.8.4.4", 
                 "dns1": "8.8.8.8", 
                 "ipaddr": "198.101.133.253", 
@@ -16,14 +16,60 @@
         ], 
         "debian": [
             {
-                "netmask": "255.255.255.0", 
-                "dnssearch": "rcb.rackspace.com", 
-                "address": "198.101.133.253", 
+                "device": "lo", 
+                "auto": "true", 
+                "type": "loopback"
+            }, 
+            {
                 "device": "eth0", 
                 "auto": "true", 
-                "type": "static", 
+                "bond_master": "mgmt-bond", 
+                "type": "manual"
+            }, 
+            {
+                "device": "eth2", 
+                "auto": "true", 
+                "bond_master": "mgmt-bond", 
+                "type": "manual"
+            }, 
+            {
+                "bond_miimon": "100", 
+                "auto": "true", 
+                "bond_mode": "active-backup", 
+                "address": "198.101.133.253", 
+                "device": "mgmt-bond", 
+                "dnssearch": "rcb.rackspace.com", 
                 "gateway": "198.101.133.1", 
-                "dnsnameservers": "8.8.8.8 8.8.4.4"
+                "bond_slaves": "eth0 eth2", 
+                "netmask": "255.255.255.0", 
+                "dnsnameservers": "8.8.8.8 8.8.4.4", 
+                "bond_downdelay": "200", 
+                "type": "static", 
+                "bond_updelay": "200"
+            }, 
+            {
+                "device": "eth1", 
+                "auto": "true", 
+                "bond_master": "vmnet-bond", 
+                "type": "manual"
+            }, 
+            {
+                "device": "eth3", 
+                "auto": "true", 
+                "bond_master": "vmnet-bond", 
+                "type": "manual"
+            }, 
+            {
+                "down": "true", 
+                "bond_mode": "active-backup", 
+                "bond_downdelay": "200", 
+                "bond_miimon": "100", 
+                "bond_slaves": "eth1 eth3", 
+                "device": "vmnet-bond", 
+                "auto": "true", 
+                "type": "static", 
+                "up": "true", 
+                "bond_updelay": "200"
             }
         ], 
         "drac": "10.12.241.120"

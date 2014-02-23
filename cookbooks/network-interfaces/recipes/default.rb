@@ -12,33 +12,8 @@ case node['platform']
 
 # DEBIAN DISTROS
   when 'ubuntu', 'debian'
-    
-    ruby_block "existing ifaces" do
-      block do
-        $ifaces_file = "/etc/network/interfaces"
-        $ifaces_file_munge = Array.new
-        $marker_tpl = "# *** %s OF CHEF MANAGED INTERFACES ***\n"
-        # Build an array ifaces_file_munge that has the contents of 
-        # /etc/network/interfaces and excludes the chef managed blocks
-        File.open($ifaces_file, "r") do | ifaces_file |
-          marker = false
-          while (line = ifaces_file.gets)
-            if line =~ /^#{$marker_tpl.gsub('*', '\*') % ["(START|END)"]}/
-              marker = line =~ /START/ ? true : false
-              next
-            end
-            if (marker == false)
-              $ifaces_file_munge << line
-            end
-          end
-        end 
-        $ifaces_file_munge << $marker_tpl % ['START']
-        $iface_digest = Digest::MD5.hexdigest(File.read($ifaces_file))
-      end
-    end
 
-    # create the interfaces file for the node using
-    # the interfaces template
+    # create the interfaces file for the node using the interfaces template
     template "/tmp/chef-net-iface" do
       source "interfaces.erb"
       mode 0644
@@ -47,48 +22,28 @@ case node['platform']
       variables({:network_interfaces => node['network_interfaces']['debian']})
     end
 
-    # merge new ifaces with the old ones
-    ruby_block "munge interface files" do
+    ruby_block "finalize interfaces file" do
       block do
+        $ifaces_file = "/etc/network/interfaces"
+        $iface_digest = Digest::MD5.hexdigest(File.read($ifaces_file))
+        $ifaces_file_munge = Array.new
         File.open("/tmp/chef-net-iface", "r") do | iface |
           while (line = iface.gets)
             $ifaces_file_munge << line
+          end
+        end
+        File.open($ifaces_file, "w") do | ifaces |
+          $ifaces_file_munge.each do | line |
+            ifaces.write(line)
           end
         end
         File.delete("/tmp/chef-net-iface")
       end
     end
 
-    ruby_block "finalize interfaces file" do
-      block do
-        $ifaces_file_munge << $marker_tpl % ['END']
-        File.open($ifaces_file, "w") do | ifaces |
-          $ifaces_file_munge.each do | line |
-            ifaces.write(line)
-          end
-        end
-      end
-    end
-
     execute "service networking restart" do
       only_if do
         $iface_digest != Digest::MD5.hexdigest(File.read($ifaces_file))
-      end
-    end
-
-    ruby_block "gather gateways to add to routing table" do
-      block do
-        $gateway_array = Array.new
-        new_ifaces = node['network_interfaces']['debian']
-        new_ifaces.each do | iface |
-          gateway_hash = Hash.new
-          iface.each_pair do | k, v |
-            if k == 'gateway' || k == 'device'
-              gateway_hash["#{k}"] = v
-            end
-          end
-          $gateway_array << gateway_hash
-        end
       end
     end
 
@@ -99,7 +54,7 @@ case node['platform']
       target '0.0.0.0'
       netmask '0.0.0.0'
       gateway '198.101.133.1'
-      device 'eth0'
+      device 'mgmt-bond'
     end
 
     route  "Removing eth1 default gateway" do
@@ -112,7 +67,7 @@ case node['platform']
 
 # RHEL DISTROS
   when "redhat", "centos", "fedora"
-    
+
     ruby_block "Gather ifcfg files" do
       block do
         # cd into the network-scripts directory and gather all ifcfg files
@@ -129,17 +84,17 @@ case node['platform']
 
         # Save the file names to an array if we change it
         $files_changed = Array.new
-        
+
         node_interfaces.each do | node_iface |
          $all_ifcfg_files.each do | ifcfg_file |
             if ifcfg_file == "ifcfg-#{node_iface['device']}"
-              
+
               # Save the MD5 of the current file
               ifcfg_file_digest = Digest::MD5.hexdigest(File.read(ifcfg_file))
-              
+
               # Create an empty hash
               file_hash = Hash.new
-              
+
               # Open file and save all current values in a hash
               File.open(ifcfg_file, "r") do | file |
                 while (line = file.gets)
